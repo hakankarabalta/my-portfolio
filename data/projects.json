@@ -9,7 +9,7 @@
         { "name": "Html5", "color": "#68a063" }
       ],
       "description": "Tasarım konusunda neler yapabileceğimi gösterdiğim ve örnek oluşturması için yaptığım kendi özel dünyam ",
-      "Link": "https://github.com/hakankarabalta/pure-css=",
+      "Link":"https://github.com/hakankarabalta/pure-css=",
       "detailImages": [
         "../assets/auto-couresel.jpg",
         "../assets/bento-grid.jpg",

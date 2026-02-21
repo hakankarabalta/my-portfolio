@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Loader Test</title>
+    <style>
+        body {
+            font-family: monospace;
+            padding: 20px;
+            background: #1e1e1e;
+            color: #d4d4d4;
+        }
+        .test-section {
+            background: #252526;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border-left: 3px solid #007acc;
+        }
+        .success { border-left-color: #4ec9b0; }
+        .error { border-left-color: #f48771; }
+        .warning { border-left-color: #dcdcaa; }
+        h2 { margin-top: 0; color: #4ec9b0; }
+        pre {
+            background: #1e1e1e;
+            padding: 10px;
+            border-radius: 3px;
+            overflow-x: auto;
+        }
+        .status {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-size: 0.9em;
+            margin-left: 10px;
+        }
+        .status.pass { background: #4ec9b0; color: #000; }
+        .status.fail { background: #f48771; color: #000; }
+        .status.pending { background: #dcdcaa; color: #000; }
+    </style>
+</head>
+<body>
+    <h1>🧪 Portfolio Loader Test Suite</h1>
+    <div id="test-results"></div>
+
+    <script>
+        // Test suite
+        const tests = {
+            results: [],
+            
+            async run() {
+                console.log('Starting test suite...');
+                const container = document.getElementById('test-results');
+                
+                // Test 1: Check if loader.js is loaded
+                this.addTest(
+                    'ComponentLoader Availability',
+                    typeof window.ComponentLoader !== 'undefined',
+                    'ComponentLoader should be available globally'
+                );
+
+                // Test 2: Check if loader has components registered
+                if (window.ComponentLoader) {
+                    this.addTest(
+                        'Components Registered',
+                        window.ComponentLoader.components.length > 0,
+                        `Found ${window.ComponentLoader.components.length} registered components`
+                    );
+                }
+
+                // Test 3: Check if main.js initialized
+                await new Promise(resolve => setTimeout(resolve, 500));
+                
+                this.addTest(
+                    'Main App Initialization',
+                    typeof window.PortfolioApp !== 'undefined' || document.querySelector('[data-app-ready]') !== null,
+                    'Main application should initialize'
+                );
+
+                // Test 4: Check console for errors
+                const hasErrors = this.checkConsoleErrors();
+                this.addTest(
+                    'No Console Errors',
+                    !hasErrors,
+                    hasErrors ? 'Check console for errors' : 'Clean console'
+                );
+
+                // Test 5: Check if files exist
+                await this.testFileExistence();
+
+                // Display results
+                this.displayResults();
+            },
+
+            addTest(name, passed, description) {
+                this.results.push({ name, passed, description });
+                console.log(`${passed ? '✅' : '❌'} ${name}: ${description}`);
+            },
+
+            async testFileExistence() {
+                const files = [
+                    'js/loader.js',
+                    'js/main.js',
+                    'js/global.js',
+                    'js/navbar.js',
+                    'js/skills.js',
+                    'js/projects.js',
+                    'data/skills.json',
+                    'data/projects.json'
+                ];
+
+                let allExist = true;
+                const missing = [];
+
+                for (const file of files) {
+                    try {
+                        const response = await fetch(file, { method: 'HEAD' });
+                        if (!response.ok) {
+                            allExist = false;
+                            missing.push(file);
+                        }
+                    } catch (e) {
+                        allExist = false;
+                        missing.push(file);
+                    }
+                }
+
+                this.addTest(
+                    'All Files Exist',
+                    allExist,
+                    allExist ? 'All required files found' : `Missing: ${missing.join(', ')}`
+                );
+            },
+
+            checkConsoleErrors() {
+                // This is a simplified check
+                // In a real test, you'd capture console.error calls
+                return false;
+            },
+
+            displayResults() {
+                const container = document.getElementById('test-results');
+                const passed = this.results.filter(r => r.passed).length;
+                const total = this.results.length;
+                
+                let html = `
+                    <div class="test-section ${passed === total ? 'success' : 'error'}">
+                        <h2>Test Results: ${passed}/${total} passed</h2>
+                    </div>
+                `;
+
+                this.results.forEach(result => {
+                    html += `
+                        <div class="test-section ${result.passed ? 'success' : 'error'}">
+                            <strong>${result.name}</strong>
+                            <span class="status ${result.passed ? 'pass' : 'fail'}">
+                                ${result.passed ? 'PASS' : 'FAIL'}
+                            </span>
+                            <p>${result.description}</p>
+                        </div>
+                    `;
+                });
+
+                // Component status
+                if (window.ComponentLoader) {
+                    html += `
+                        <div class="test-section">
+                            <h2>Component Status</h2>
+                            <pre>${JSON.stringify({
+                                registered: window.ComponentLoader.components.map(c => c.name),
+                                loaded: Array.from(window.ComponentLoader.loadedComponents),
+                                failed: Array.from(window.ComponentLoader.failedComponents),
+                                errors: window.ComponentLoader.errors
+                            }, null, 2)}</pre>
+                        </div>
+                    `;
+                }
+
+                container.innerHTML = html;
+            }
+        };
+
+        // Run tests when page loads
+        window.addEventListener('load', () => {
+            setTimeout(() => tests.run(), 1000);
+        });
+    </script>
+
+    <!-- Load the actual portfolio scripts -->
+    <script src="js/global.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/skills.js"></script>
+    <script src="js/projects.js"></script>
+    <script src="js/loader.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

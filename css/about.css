@@ -1,0 +1,26 @@
+/* ===================================
+   ABOUT SECTION STYLES
+   About me section with text content
+   =================================== */
+
+.about {
+    padding: var(--spacing-2xl) 0;
+    background-color: var(--bg-primary);
+}
+
+.about-content {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* ===================================
+   MOBILE STYLES
+   =================================== */
+@media (max-width: 768px) {
+    .about-content {
+        padding: 0 calc(var(--spacing-md) + 3px);
+    }
+}

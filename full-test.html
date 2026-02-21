@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Full Test</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/icons.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/skills.css">
+    <link rel="stylesheet" href="css/projects.css">
+    <style>
+        body { 
+            padding: 80px 20px 20px;
+            background: #f5f5f5;
+        }
+        .test-section {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .test-header {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        .status-indicator {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+        .status-indicator.success { background: #4caf50; color: white; }
+        .status-indicator.error { background: #f44336; color: white; }
+        .status-indicator.warning { background: #ff9800; color: white; }
+        .console-log {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: monospace;
+            font-size: 12px;
+            max-height: 300px;
+            overflow-y: auto;
+            margin-top: 15px;
+        }
+        .console-log .log-entry {
+            margin: 2px 0;
+            padding: 2px 0;
+        }
+        .console-log .error { color: #f48771; }
+        .console-log .success { color: #4ec9b0; }
+        .console-log .info { color: #9cdcfe; }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center; margin-bottom: 30px;">🧪 Portfolio Component Test</h1>
+
+    <!-- Navbar Test -->
+    <div class="test-section">
+        <div class="test-header">
+            1. Navbar Component
+            <span class="status-indicator" id="navbar-status">Testing...</span>
+        </div>
+        <nav class="navbar" style="position: relative;">
+            <div class="navbar-container">
+                <div class="social-links">
+                    <a href="#"><span class="social-icon github"></span></a>
+                </div>
+                <div class="hamburger"><span></span><span></span><span></span></div>
+                <ul class="nav-menu">
+                    <li><a href="#" class="nav-link">Test</a></li>
+                </ul>
+            </div>
+            <div class="nav-overlay"></div>
+        </nav>
+    </div>
+
+    <!-- Skills Test -->
+    <div class="test-section">
+        <div class="test-header">
+            2. Skills Component
+            <span class="status-indicator" id="skills-status">Testing...</span>
+        </div>
+        <section class="skills" style="padding: 0;">
+            <div class="skills-container">
+                <div class="skills-filters"></div>
+                <div class="skills-grid" style="max-height: 300px;"></div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Projects Test -->
+    <div class="test-section">
+        <div class="test-header">
+            3. Projects Component
+            <span class="status-indicator" id="projects-status">Testing...</span>
+        </div>
+        <section class="projects" style="padding: 0;">
+            <div class="projects-container">
+                <div class="projects-grid"></div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Console Output -->
+    <div class="test-section">
+        <div class="test-header">4. Console Output</div>
+        <div class="console-log" id="console-output"></div>
+    </div>
+
+    <script>
+        // Console capture
+        const logs = [];
+        const consoleOutput = document.getElementById('console-output');
+        
+        function addLog(message, type = 'info') {
+            const time = new Date().toLocaleTimeString();
+            logs.push({ time, message, type });
+            updateConsole();
+        }
+
+        function updateConsole() {
+            consoleOutput.innerHTML = logs.map(log => 
+                `<div class="log-entry ${log.type}">[${log.time}] ${log.message}</div>`
+            ).join('');
+            consoleOutput.scrollTop = consoleOutput.scrollHeight;
+        }
+
+        // Override console methods
+        const originalLog = console.log;
+        const originalError = console.error;
+        const originalWarn = console.warn;
+
+        console.log = function(...args) {
+            originalLog.apply(console, args);
+            addLog(args.join(' '), 'info');
+        };
+
+        console.error = function(...args) {
+            originalError.apply(console, args);
+            addLog('ERROR: ' + args.join(' '), 'error');
+        };
+
+        console.warn = function(...args) {
+            originalWarn.apply(console, args);
+            addLog('WARN: ' + args.join(' '), 'info');
+        };
+
+        // Test status tracking
+        const componentStatus = {
+            navbar: false,
+            skills: false,
+            projects: false
+        };
+
+        function updateStatus(component, success) {
+            componentStatus[component] = success;
+            const statusEl = document.getElementById(`${component}-status`);
+            if (statusEl) {
+                statusEl.textContent = success ? 'PASS ✓' : 'FAIL ✗';
+                statusEl.className = 'status-indicator ' + (success ? 'success' : 'error');
+            }
+        }
+
+        // Wait for components to load
+        window.addEventListener('DOMContentLoaded', () => {
+            addLog('DOM Content Loaded', 'success');
+            
+            // Check navbar
+            setTimeout(() => {
+                const hamburger = document.querySelector('.hamburger');
+                const hasNavbar = hamburger !== null;
+                updateStatus('navbar', hasNavbar);
+                addLog(`Navbar: ${hasNavbar ? 'Found' : 'Not found'}`, hasNavbar ? 'success' : 'error');
+            }, 500);
+        });
+
+        window.addEventListener('load', () => {
+            addLog('Window loaded', 'success');
+            
+            // Check skills after 2 seconds
+            setTimeout(() => {
+                const skillCards = document.querySelectorAll('.skill-card');
+                const hasSkills = skillCards.length > 0;
+                updateStatus('skills', hasSkills);
+                addLog(`Skills: ${skillCards.length} cards loaded`, hasSkills ? 'success' : 'error');
+                
+                const filters = document.querySelectorAll('.filter-btn');
+                addLog(`Skills Filters: ${filters.length} buttons`, filters.length > 0 ? 'success' : 'error');
+            }, 2000);
+
+            // Check projects after 2.5 seconds
+            setTimeout(() => {
+                const projectCards = document.querySelectorAll('.project-card');
+                const hasProjects = projectCards.length > 0;
+                updateStatus('projects', hasProjects);
+                addLog(`Projects: ${projectCards.length} cards loaded`, hasProjects ? 'success' : 'error');
+                
+                if (!hasProjects) {
+                    addLog('ERROR: Projects not loading! Check console for errors.', 'error');
+                    addLog('Possible issues: JSON file not found, fetch error, rendering error', 'error');
+                }
+            }, 2500);
+
+            // Final summary
+            setTimeout(() => {
+                const allPassed = Object.values(componentStatus).every(v => v);
+                addLog('─────────────────────────────', 'info');
+                addLog(`Test Summary: ${allPassed ? 'ALL TESTS PASSED ✓' : 'SOME TESTS FAILED ✗'}`, 
+                       allPassed ? 'success' : 'error');
+                
+                if (window.ComponentLoader) {
+                    addLog(`Loaded: ${window.ComponentLoader.loadedComponents.size}`, 'info');
+                    addLog(`Failed: ${window.ComponentLoader.failedComponents.size}`, 'info');
+                }
+            }, 3000);
+        });
+
+        // Capture any errors
+        window.addEventListener('error', (e) => {
+            addLog(`GLOBAL ERROR: ${e.message} at ${e.filename}:${e.lineno}`, 'error');
+        });
+    </script>
+
+    <!-- Load actual scripts -->
+    <script src="js/global.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/skills.js"></script>
+    <script src="js/projects.js"></script>
+    <script src="js/loader.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

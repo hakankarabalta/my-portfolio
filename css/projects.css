@@ -1,0 +1,191 @@
+/* ===================================
+   PROJECTS SECTION STYLES
+   Grid layout with card hover effects
+   =================================== */
+
+/* Projects Container */
+.projects {
+    padding: var(--spacing-2xl) 0;
+    background-color: var(--bg-primary);
+}
+
+.projects-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
+}
+
+/* Section Title */
+.projects-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    text-align: center;
+    margin-bottom: var(--spacing-2xl);
+}
+
+/* Projects Grid */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-xl);
+}
+
+/* Project Card */
+.project-card {
+    background-color: var(--bg-primary);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1px solid var(--border-light);
+    transition: all var(--transition-base);
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary);
+}
+
+/* Project Thumbnail */
+.project-thumbnail {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    background-color: var(--bg-ghost);
+}
+
+.project-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
+}
+
+.project-card:hover .project-thumbnail img {
+    transform: scale(1.05);
+}
+
+/* Project Info */
+.project-info {
+    padding: var(--spacing-lg);
+}
+
+.project-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-md);
+}
+
+/* Project Tags */
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+}
+
+.project-tag-item {
+    padding: 6px 12px;
+    border-radius: var(--radius-sm);
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: white;
+}
+
+/* ===================================
+   TABLET STYLES
+   2-column grid for tablets
+   =================================== */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-lg);
+    }
+
+    .projects-title {
+        font-size: 2.25rem;
+    }
+
+    .project-thumbnail {
+        height: 220px;
+    }
+}
+
+/* ===================================
+   MOBILE STYLES
+   Horizontal scroll for mobile
+   =================================== */
+@media (max-width: 768px) {
+    .projects {
+        padding: var(--spacing-xl) 0;
+    }
+
+    .projects-container {
+        padding: 0;
+    }
+
+    .projects-title {
+        font-size: 2rem;
+        margin-bottom: var(--spacing-xl);
+        padding: 0 var(--spacing-md);
+    }
+
+    /* Horizontal scrolling on mobile */
+    .projects-grid {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: var(--spacing-md);
+        padding: 0 var(--spacing-md);
+        scroll-padding: 0 var(--spacing-md);
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* Hide scrollbar */
+    .projects-grid::-webkit-scrollbar {
+        display: none;
+    }
+
+    .projects-grid {
+        scrollbar-width: none;
+    }
+
+    .project-card {
+        flex: 0 0 85%;
+        scroll-snap-align: start;
+    }
+
+    .project-thumbnail {
+        height: 200px;
+    }
+
+    .project-info {
+        padding: var(--spacing-md);
+    }
+
+    .project-title {
+        font-size: 1.25rem;
+    }
+}
+
+/* ===================================
+   LARGE DESKTOP STYLES
+   Enhanced sizes for large screens
+   =================================== */
+@media (min-width: 1440px) {
+    .projects-title {
+        font-size: 3rem;
+    }
+
+    .project-thumbnail {
+        height: 280px;
+    }
+
+    .project-title {
+        font-size: 1.75rem;
+    }
+}

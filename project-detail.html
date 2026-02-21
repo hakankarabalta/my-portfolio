@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Proje Detayları">
+    <title>Proje Detayı | Portfolio</title>
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/icons.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/project-detail.css">
+</head>
+<body>
+    
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <!-- Social Links -->
+            <div class="social-links">
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                    <span class="social-icon github"></span>
+                </a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <span class="social-icon linkedin"></span>
+                </a>
+                <a href="mailto:ornek@email.com" aria-label="Email">
+                    <span class="social-icon email"></span>
+                </a>
+            </div>
+            
+            <!-- Hamburger Menu (Mobile) -->
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+            <!-- Navigation Menu -->
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Ana Sayfa</a></li>
+                <li><a href="index.html#about" class="nav-link">Hakkımda</a></li>
+                <li><a href="index.html#skills" class="nav-link">Yetenekler</a></li>
+                <li><a href="index.html#projects" class="nav-link active">Projeler</a></li>
+                <li><a href="index.html#contact" class="nav-link">İletişim</a></li>
+            </ul>
+        </div>
+        <div class="nav-overlay"></div>
+    </nav>
+    
+    <!-- PROJECT DETAIL -->
+    <section class="project-detail">
+        <div class="detail-container">
+            <!-- Back Button -->
+            <a href="index.html#projects" class="back-button">
+                ← Projelere Dön
+            </a>
+            
+            <!-- Detail Thumbnail -->
+            <div class="detail-thumbnail">
+                <img src="" alt="Proje Görseli">
+            </div>
+            
+            <!-- Detail Content -->
+            <div class="detail-content">
+                <h1 class="detail-title">Proje Başlığı</h1>
+                <p class="detail-description">Proje açıklaması buraya gelecek...</p>
+                <a href="#" class="detail-link" target="_blank" rel="noopener noreferrer" style="display: none;">
+                    <span class="link-text">Projeyi Görüntüle</span>
+                </a>
+            </div>
+            
+            <!-- Detail Tags -->
+            <div class="detail-tags">
+                <!-- Tags will be loaded via JavaScript -->
+            </div>
+            
+            <!-- Image Slider -->
+            <div class="image-slider">
+                <div class="slider-container">
+                    <div class="slider-track">
+                        <!-- Slides will be loaded via JavaScript -->
+                    </div>
+                    
+                    <!-- Slider Arrows -->
+                    <button class="slider-arrow prev" aria-label="Previous">
+                        ‹
+                    </button>
+                    <button class="slider-arrow next" aria-label="Next">
+                        ›
+                    </button>
+                </div>
+                
+                <!-- Slider Indicators -->
+                <div class="slider-indicators">
+                    <!-- Indicators will be loaded via JavaScript -->
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Image Modal -->
+    <div class="image-modal">
+        <button class="modal-close" aria-label="Close">
+            ✕
+        </button>
+        <img src="" alt="Enlarged Image">
+    </div>
+    
+    <!-- JavaScript Files -->
+    <!-- Load in specific order: global utilities → component scripts → loader → main -->
+    <script src="js/global.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/project-detail.js"></script>
+    <script src="js/loader.js"></script>
+    <script src="js/main.js"></script>
+    
+</body>
+</html>

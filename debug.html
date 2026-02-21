@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug - Portfolio Test</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/icons.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/skills.css">
+    <link rel="stylesheet" href="css/projects.css">
+    <style>
+        body { padding-top: 80px; }
+        .debug-panel {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #1e1e1e;
+            color: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: monospace;
+            font-size: 12px;
+            max-width: 300px;
+            max-height: 400px;
+            overflow-y: auto;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            z-index: 9999;
+        }
+        .debug-panel h3 { margin: 0 0 10px 0; color: #4ec9b0; font-size: 14px; }
+        .debug-panel .status { padding: 5px; margin: 3px 0; border-radius: 3px; }
+        .debug-panel .status.ok { background: #0e5a1e; }
+        .debug-panel .status.error { background: #5a0e0e; }
+        .debug-panel .status.warn { background: #5a4e0e; }
+    </style>
+</head>
+<body>
+    <!-- Simple navbar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="social-links">
+                <a href="#" aria-label="Test">
+                    <span class="social-icon github"></span>
+                </a>
+            </div>
+            <div class="hamburger">
+                <span></span><span></span><span></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#" class="nav-link">Test</a></li>
+            </ul>
+        </div>
+        <div class="nav-overlay"></div>
+    </nav>
+
+    <!-- Skills section -->
+    <section id="skills" class="skills">
+        <div class="skills-container">
+            <h2 class="skills-title">Skills Test</h2>
+            <div class="skills-filters"></div>
+            <div class="skills-grid"></div>
+        </div>
+    </section>
+
+    <!-- Projects section -->
+    <section id="projects" class="projects">
+        <div class="projects-container">
+            <h2 class="projects-title">Projects Test</h2>
+            <div class="projects-grid"></div>
+        </div>
+    </section>
+
+    <!-- Debug panel -->
+    <div class="debug-panel">
+        <h3>🔍 Debug Info</h3>
+        <div id="debug-output">Initializing...</div>
+    </div>
+
+    <script>
+        // Debug logger
+        const debugLog = [];
+        const debugOutput = document.getElementById('debug-output');
+        
+        function log(message, type = 'info') {
+            const timestamp = new Date().toLocaleTimeString();
+            debugLog.push({ timestamp, message, type });
+            updateDebugPanel();
+            
+            // Also log to console
+            console.log(`[${timestamp}] ${message}`);
+        }
+
+        function updateDebugPanel() {
+            debugOutput.innerHTML = debugLog.slice(-10).map(({ timestamp, message, type }) => {
+                const className = type === 'error' ? 'error' : type === 'warn' ? 'warn' : 'ok';
+                return `<div class="status ${className}">${timestamp}: ${message}</div>`;
+            }).join('');
+        }
+
+        // Override console methods to capture logs
+        const originalLog = console.log;
+        const originalError = console.error;
+        const originalWarn = console.warn;
+
+        console.log = function(...args) {
+            originalLog.apply(console, args);
+            log(args.join(' '), 'info');
+        };
+
+        console.error = function(...args) {
+            originalError.apply(console, args);
+            log(args.join(' '), 'error');
+        };
+
+        console.warn = function(...args) {
+            originalWarn.apply(console, args);
+            log(args.join(' '), 'warn');
+        };
+
+        // Log initial state
+        log('Page loaded', 'info');
+        
+        window.addEventListener('DOMContentLoaded', () => {
+            log('DOM Content Loaded', 'ok');
+        });
+
+        window.addEventListener('load', () => {
+            log('Window loaded', 'ok');
+            
+            // Check if components loaded
+            setTimeout(() => {
+                const skillsCards = document.querySelectorAll('.skill-card');
+                const projectCards = document.querySelectorAll('.project-card');
+                
+                log(`Skills loaded: ${skillsCards.length}`, skillsCards.length > 0 ? 'ok' : 'warn');
+                log(`Projects loaded: ${projectCards.length}`, projectCards.length > 0 ? 'ok' : 'warn');
+                
+                if (window.ComponentLoader) {
+                    log('ComponentLoader: Available', 'ok');
+                    log(`Loaded: ${window.ComponentLoader.loadedComponents.size}`, 'ok');
+                    log(`Failed: ${window.ComponentLoader.failedComponents.size}`, 
+                        window.ComponentLoader.failedComponents.size > 0 ? 'error' : 'ok');
+                } else {
+                    log('ComponentLoader: NOT FOUND', 'error');
+                }
+            }, 2000);
+        });
+    </script>
+
+    <!-- Load scripts -->
+    <script src="js/global.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/skills.js"></script>
+    <script src="js/projects.js"></script>
+    <script src="js/loader.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,277 @@
+/* ===================================
+   SKILLS SECTION STYLES
+   Filterable skill cards with custom scrollbar
+   =================================== */
+
+/* Skills Container */
+.skills {
+    padding: var(--spacing-2xl) 0;
+    background-color: var(--bg-primary);
+}
+
+.skills-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
+}
+
+/* Section Title */
+.skills-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    text-align: center;
+    margin-bottom: var(--spacing-md);
+}
+
+/* Skills Filters */
+.skills-filters {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-2xl);
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: var(--spacing-sm) var(--spacing-lg);
+    background-color: var(--bg-ghost);
+    color: var(--text-primary);
+    border: 2px solid transparent;
+    border-radius: var(--radius-md);
+    font-size: 0.9375rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-base);
+}
+
+.filter-btn:hover {
+    background-color: #ebebeb;
+}
+
+.filter-btn.active {
+    background-color: var(--primary);
+    color: var(--bg-primary);
+    border-color: var(--primary);
+}
+
+.filter-count {
+    display: inline-block;
+    margin-left: 6px;
+    padding: 2px 8px;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    font-size: 0.8125rem;
+}
+
+.filter-btn.active .filter-count {
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+/* Skills Grid */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+    max-height: 650px;
+    overflow-y: auto;
+    padding-right: var(--spacing-sm);
+}
+
+/* Scrollbar Styling */
+.skills-grid::-webkit-scrollbar {
+    width: 6px;
+}
+
+.skills-grid::-webkit-scrollbar-track {
+    background: var(--bg-ghost);
+    border-radius: 10px;
+}
+
+.skills-grid::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 10px;
+}
+
+.skills-grid::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-hover);
+}
+
+/* Firefox Scrollbar */
+.skills-grid {
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary) var(--bg-ghost);
+}
+
+/* Skill Card */
+.skill-card {
+    background-color: var(--bg-ghost);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    transition: all var(--transition-base);
+}
+
+.skill-card.hidden {
+    display: none;
+}
+
+/* Skill Logo/Icon */
+.skill-logo {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.skill-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Alternative: if using icon fonts */
+.skill-logo i {
+    font-size: 2.5rem;
+}
+
+/* Skill Info (Right side) */
+.skill-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+/* Skill Name */
+.skill-name {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.2;
+}
+
+/* Skill Category */
+.skill-category {
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: var(--text-muted);
+    opacity: 0.8;
+}
+
+/* ===================================
+   TABLET STYLES
+   3-column grid for tablets
+   =================================== */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .skills-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--spacing-md);
+        max-height: 550px;
+    }
+
+    .skills-title {
+        font-size: 2.25rem;
+    }
+
+    .skill-card {
+        padding: var(--spacing-md);
+    }
+
+    .skill-logo {
+        width: 40px;
+        height: 40px;
+    }
+
+    .skill-name {
+        font-size: 1rem;
+    }
+
+    .skill-category {
+        font-size: 0.8125rem;
+    }
+}
+
+/* ===================================
+   MOBILE STYLES
+   Single column layout for mobile
+   =================================== */
+@media (max-width: 768px) {
+    .skills {
+        padding: var(--spacing-xl) 0;
+    }
+
+    .skills-container {
+        padding: 0 var(--spacing-md);
+    }
+
+    .skills-title {
+        font-size: 2rem;
+        margin-bottom: var(--spacing-md);
+    }
+
+    .skills-filters {
+        gap: var(--spacing-sm);
+        margin-bottom: var(--spacing-xl);
+    }
+
+    .filter-btn {
+        padding: var(--spacing-sm) var(--spacing-md);
+        font-size: 0.875rem;
+    }
+
+    /* Single column on mobile */
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+        max-height: 500px;
+    }
+
+    .skill-card {
+        padding: var(--spacing-md);
+    }
+
+    .skill-logo {
+        width: 40px;
+        height: 40px;
+    }
+
+    .skill-name {
+        font-size: 1rem;
+    }
+
+    .skill-category {
+        font-size: 0.8125rem;
+    }
+}
+
+/* ===================================
+   LARGE DESKTOP STYLES
+   Enhanced sizes for large screens
+   =================================== */
+@media (min-width: 1440px) {
+    .skills-title {
+        font-size: 3rem;
+    }
+
+    .skill-card {
+        padding: var(--spacing-xl);
+    }
+
+    .skill-logo {
+        width: 56px;
+        height: 56px;
+    }
+
+    .skill-name {
+        font-size: 1.25rem;
+    }
+
+    .skill-category {
+        font-size: 0.9375rem;
+    }
+}

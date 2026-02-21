@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Front-End Developer Portfolio">
+    <title>Portfolio | Front-End Developer</title>
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/icons.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/skills.css">
+    <link rel="stylesheet" href="css/projects.css">
+    <link rel="stylesheet" href="css/contact.css">
+</head>
+<body>
+    
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <!-- Social Links -->
+            <div class="social-links">
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                    <span class="social-icon github"></span>
+                </a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <span class="social-icon linkedin"></span>
+                </a>
+                <a href="mailto:ornek@email.com" aria-label="Email">
+                    <span class="social-icon email"></span>
+                </a>
+            </div>
+            
+            <!-- Hamburger Menu (Mobile) -->
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+            <!-- Navigation Menu -->
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link active">Ana Sayfa</a></li>
+                <li><a href="#about" class="nav-link">Hakkımda</a></li>
+                <li><a href="#skills" class="nav-link">Yetenekler</a></li>
+                <li><a href="#projects" class="nav-link">Projeler</a></li>
+                <li><a href="#contact" class="nav-link">İletişim</a></li>
+            </ul>
+        </div>
+        <div class="nav-overlay"></div>
+    </nav>
+    
+    <!-- HERO SECTION -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-profile">
+                <!-- Profile image will be loaded from CSS variable (--profile-image) -->
+            </div>
+            <p class="hero-greeting">Merhaba Dünya 👋</p>
+            <h1 class="hero-title">Front-End Developer</h1>
+            <p class="hero-subtitle">Modern ve kullanıcı dostu web deneyimleri yaratıyorum</p>
+            <p class="hero-description">
+                Her projede estetik ve fonksiyonelliği birleştirerek, 
+                kullanıcıların beğeneceği arayüzler tasarlıyorum.
+            </p>
+            <a href="#contact" class="hero-cta">Benimle İletişime Geç</a>
+        </div>
+    </section>
+    
+    <!-- ABOUT SECTION -->
+    <section id="about" class="about">
+        <div class="container">
+            <p class="about-content">
+                Ben bir front-end developer olarak modern web teknolojileriyle kullanıcı odaklı, estetik ve işlevsel arayüzler geliştiriyorum. Kodlama tutkum ve detaylara gösterdiğim özen ile her projede en iyi sonucu elde etmeye çalışıyorum. Sürekli öğrenmeye ve kendimi geliştirmeye açık bir yaklaşımla, yeni teknolojileri takip ediyor ve projelerimde uyguluyorum. Kullanıcı deneyimini ön planda tutarak, hem görsel olarak çekici hem de kullanımı kolay web siteleri ve uygulamalar oluşturuyorum. İş birliğine ve ekip çalışmasına değer veriyor, her projede sizinle birlikte harika şeyler başarmak için sabırsızlanıyorum.
+            </p>
+        </div>
+    </section>
+    
+    <!-- SKILLS SECTION -->
+    <section id="skills" class="skills">
+        <div class="skills-container">
+            <h2 class="skills-title">Yeteneklerim</h2>
+            <div class="skills-filters">
+                <!-- Filters will be loaded here via JavaScript -->
+            </div>
+            <div class="skills-grid">
+                <!-- Skills will be loaded here via JavaScript -->
+            </div>
+        </div>
+    </section>
+    
+    <!-- PROJECTS SECTION -->
+    <section id="projects" class="projects">
+        <div class="projects-container">
+            <h2 class="projects-title">Projelerim</h2>
+            <div class="projects-grid">
+                <!-- Projects will be loaded here via JavaScript -->
+            </div>
+        </div>
+    </section>
+    
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="contact-title">İletişim</h2>
+            <p class="contact-placeholder">Bu bölüm yakında eklenecek...</p>
+        </div>
+    </section>
+    
+    <!-- JavaScript Files -->
+    <!-- Load in specific order: global utilities → component scripts → loader → main -->
+    <script src="js/global.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/skills.js"></script>
+    <script src="js/projects.js"></script>
+    <script src="js/loader.js"></script>
+    <script src="js/main.js"></script>
+    
+</body>
+</html>

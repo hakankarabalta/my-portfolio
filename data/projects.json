@@ -19,14 +19,15 @@
     },
     {
       "id": 2,
-      "title": "Sosyal Medya Dashboard",
+      "title": "Email maskeleme",
       "thumbnail": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
       "tags": [
-        { "name": "Vue.js", "color": "#42b883" },
-        { "name": "TypeScript", "color": "#3178c6" },
-        { "name": "Tailwind", "color": "#06b6d4" }
+        { "name": "Html5", "color": "#42b883" },
+        { "name": "Css3", "color": "#3178c6" },
+        { "name": "Javascript", "color": "#06b6d4" }
       ],
-      "description": "Sosyal medya analitikleri için kapsamlı bir dashboard uygulaması. Gerçek zamanlı veri görselleştirme, interaktif grafikler ve kullanıcı aktivite takibi özellikleri sunar.",
+      "description": "Email gizlemek için basit yapılı bir program genel amaçlı kullanıma ve geliştirmeye açık olarak hazırladım.",
+      "Link": "https://github.com/hakankarabalta/email-masking",
       "detailImages": [
         "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=800&fit=crop",
         "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=800&fit=crop",

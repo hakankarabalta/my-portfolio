@@ -58,14 +58,14 @@
     align-items: center;
     gap: var(--spacing-sm);
     padding: 12px 24px;
-    background: linear-gradient(135deg, var(--primary) 0%, #667eea 100%);
+    background: var(--primary-hover);
     color: white;
     text-decoration: none;
     border-radius: var(--radius-md);
     font-size: 1rem;
     font-weight: 600;
     transition: all var(--transition-base);
-    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.2);
     margin-bottom: var(--spacing-xl);
 }
 

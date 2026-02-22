@@ -11,18 +11,6 @@
     display: inline-block;
 }
 
-.icon-github::before {
-    content: "📱"; /* GitHub placeholder - replace with actual icon font if needed */
-}
-
-.icon-linkedin::before {
-    content: "💼"; /* LinkedIn placeholder */
-}
-
-.icon-email::before {
-    content: "✉️"; /* Email placeholder */
-}
-
 /* Alternative: Using SVG as background images */
 .social-icon {
     display: inline-flex;

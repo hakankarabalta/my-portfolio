@@ -16,10 +16,45 @@
     margin-bottom: var(--spacing-xl);
 }
 
-.contact-placeholder {
-    text-align: center;
-    color: var(--text-muted);
-    font-size: 1rem;
+.contact > .container > form {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    background-color: var(--bg-ghost);
+    padding-top: 30px;
+    border-radius: 15px;
+}
+
+.contact > .container > form > input {
+    border: 1px solid var(--primary-hover);
+    height: 40px;
+    border-radius: 7px;
+    border: 1px solid var(--primary-hover);
+    width: 70%;
+    padding: 4px;
+}
+
+.contact > .container > form > textarea {
+    resize: none;
+    height: 50dvh;
+    width: 70%;
+    padding: 4px;
+}
+
+.contact > .container > form > h4 {
+    margin-bottom: -10px;
+    text-align: start;
+    width: 70%;
+}
+
+.contact > .container > form > button {
+    background-color: var(--primary-hover);
+    color: var(--bg-primary);
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 30px;
 }
 
 /* ===================================

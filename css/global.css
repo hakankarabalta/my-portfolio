@@ -156,6 +156,10 @@ body {
     color: var(--text-muted);
 }
 
+section {
+    scroll-margin-top: 100px;
+}
+
 /* Flexbox Utilities */
 .flex {
     display: flex;

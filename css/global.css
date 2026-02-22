@@ -73,7 +73,7 @@ input, textarea, select {
     --icon-color: #1a1a1a;
     
     /* Profile Image URL - Replace with your own photo */
-    --profile-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop');
+    --profile-image: url('../assets/profilephoto.jpg');
     
     /* Border Colors */
     --border-light: #e0e0e0;

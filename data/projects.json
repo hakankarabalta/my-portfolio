@@ -10,6 +10,7 @@
       ],
       "description": "Tasarım konusunda neler yapabileceğimi gösterdiğim ve örnek oluşturması için yaptığım bir projedir. Bu proje için sadece html5 ve css3 kullandım javascript ile daha sonrasında gelistirmek mümkündür. mimari olarak her bileşeni birbirine ayrı olarak tasarladım ve githubdan istediğiniz zaman alıp kullanmaya başlayabilirsiniz",
       "Link":"https://github.com/hakankarabalta/pure-css",
+      "Demo": "https://pure-css-six.vercel.app/",
       "detailImages": [
         "../assets/auto-couresel.jpg",
         "../assets/bento-grid.jpg",
@@ -28,7 +29,7 @@
       ],
       "description": "Email gizlemek için basit yapılı bir program genel amaçlı kullanıma ve geliştirmeye açık olarak hazırladım.",
       "Link":"https://github.com/hakankarabalta/email-masking",
-      "Demo":"www.google.com",
+      "Demo":"https://email-masking-red.vercel.app/",
       "detailImages": [
         "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=800&fit=crop",
         "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=800&fit=crop",

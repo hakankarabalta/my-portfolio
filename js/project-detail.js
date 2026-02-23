@@ -84,6 +84,13 @@ class ProjectDetail {
             link.style.display = 'inline-flex';
         }
         
+        // Demo link if available 
+        const demo = document.querySelector('.demo-link');
+        if (demo && project.Demo) {
+        demo.href = project.Demo;
+        demo.style.display = 'inline-flex';
+            }
+        
         // Render tags
         const tagsContainer = document.querySelector('.detail-tags');
         if (tagsContainer) {

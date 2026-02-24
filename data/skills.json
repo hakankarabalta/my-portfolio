@@ -26,183 +26,57 @@
     },
     {
       "id": 5,
-      "name": "React",
-      "category": "Frontend",
-      "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
-    },
-    {
-      "id": 6,
-      "name": "Vue.js",
-      "category": "Frontend",
-      "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg"
-    },
-    {
-      "id": 7,
-      "name": "Next.js",
-      "category": "Frontend",
-      "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg"
-    },
-    {
-      "id": 8,
       "name": "Sass",
       "category": "Frontend",
       "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg"
     },
     {
-      "id": 9,
+      "id": 6,
       "name": "Tailwind CSS",
       "category": "Frontend",
       "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg"
     },
     {
-      "id": 10,
+      "id": 7,
       "name": "Bootstrap",
       "category": "Frontend",
       "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg"
     },
     {
-      "id": 11,
-      "name": "Node.js",
-      "category": "Backend",
-      "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
-    },
-    {
-      "id": 12,
-      "name": "Express.js",
-      "category": "Backend",
-      "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg"
-    },
-    {
-      "id": 13,
-      "name": "Python",
-      "category": "Backend",
-      "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
-    },
-    {
-      "id": 14,
-      "name": "Django",
-      "category": "Backend",
-      "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg"
-    },
-    {
-      "id": 15,
-      "name": "MongoDB",
-      "category": "Backend",
-      "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
-    },
-    {
-      "id": 16,
-      "name": "PostgreSQL",
-      "category": "Backend",
-      "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"
-    },
-    {
-      "id": 17,
-      "name": "MySQL",
-      "category": "Backend",
-      "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
-    },
-    {
-      "id": 18,
-      "name": "Redis",
-      "category": "Backend",
-      "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg"
-    },
-    {
-      "id": 19,
+      "id": 8,
       "name": "Figma",
       "category": "UI/UX Design",
       "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg"
     },
     {
-      "id": 20,
-      "name": "Adobe XD",
-      "category": "UI/UX Design",
-      "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/xd/xd-plain.svg"
-    },
-    {
-      "id": 21,
+      "id": 9,
       "name": "Photoshop",
       "category": "UI/UX Design",
       "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-original.svg"
     },
     {
-      "id": 22,
-      "name": "Illustrator",
-      "category": "UI/UX Design",
-      "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/illustrator/illustrator-plain.svg"
-    },
-    {
-      "id": 23,
-      "name": "Sketch",
-      "category": "UI/UX Design",
-      "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sketch/sketch-original.svg"
-    },
-    {
-      "id": 24,
-      "name": "InVision",
-      "category": "UI/UX Design",
-      "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/invision/invision-original.svg"
-    },
-    {
-      "id": 25,
+      "id": 10,
       "name": "Git",
       "category": "Tools & Others",
       "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
     },
     {
-      "id": 26,
+      "id": 11,
       "name": "GitHub",
       "category": "Tools & Others",
       "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
     },
     {
-      "id": 27,
-      "name": "Docker",
-      "category": "Tools & Others",
-      "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"
-    },
-    {
-      "id": 28,
+      "id": 12,
       "name": "VS Code",
       "category": "Tools & Others",
       "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg"
     },
     {
-      "id": 29,
-      "name": "Webpack",
-      "category": "Tools & Others",
-      "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/webpack/webpack-original.svg"
-    },
-    {
-      "id": 30,
-      "name": "Vite",
-      "category": "Tools & Others",
-      "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vitejs/vitejs-original.svg"
-    },
-    {
-      "id": 31,
+      "id": 13,
       "name": "npm",
       "category": "Tools & Others",
       "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/npm/npm-original-wordmark.svg"
-    },
-    {
-      "id": 32,
-      "name": "Postman",
-      "category": "Tools & Others",
-      "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg"
-    },
-    {
-      "id": 33,
-      "name": "Jira",
-      "category": "Tools & Others",
-      "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jira/jira-original.svg"
-    },
-    {
-      "id": 34,
-      "name": "Slack",
-      "category": "Tools & Others",
-      "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/slack/slack-original.svg"
     }
   ]
 }

@@ -38,14 +38,16 @@
     },
     {
       "id": 3,
-      "title": "Portfolio Website",
+      "title": "Portfolyo website - 1",
       "thumbnail": "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&h=600&fit=crop",
       "tags": [
-        { "name": "Next.js", "color": "#000000" },
-        { "name": "Framer Motion", "color": "#0055ff" },
-        { "name": "CSS", "color": "#1572b6" }
+        { "name": "html5", "color": "#000000" },
+        { "name": "css3", "color": "#0055ff" },
+        { "name": "javascript", "color": "#1572b6" }
       ],
-      "description": "Minimalist ve modern tasarıma sahip kişisel portfolyo sitesi. Smooth animasyonlar, dark mode desteği ve SEO optimizasyonu ile geliştirilmiştir.",
+      "description": "Minimalist ve modern tasarıma sahip kişisel portfolyo sitesi. Smooth animasyonlar, Seo optimizasyonu ve kişinin ihtiyaçları doğrultusunda gereken bileşenler eklenmiştir.",
+      "Link":"https://github.com/hakankarabalta/psychology-website",
+      "Demo":"https://psychology-website-chi.vercel.app/",
       "detailImages": [
         "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=1200&h=800&fit=crop",
         "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?w=1200&h=800&fit=crop",
@@ -54,14 +56,14 @@
     },
     {
       "id": 4,
-      "title": "Task Management App",
+      "title": "BoostTraningClub website",
       "thumbnail": "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&h=600&fit=crop",
       "tags": [
-        { "name": "React", "color": "#61dafb" },
-        { "name": "Redux", "color": "#764abc" },
-        { "name": "Firebase", "color": "#ffca28" }
+        { "name": "html5", "color": "#61dafb" },
+        { "name": "css3", "color": "#764abc" },
+        { "name": "javascript", "color": "#ffca28" }
       ],
-      "description": "Görev yönetimi ve takım iş birliği için geliştirilmiş uygulama. Drag & drop özelliği, gerçek zamanlı senkronizasyon ve bildirim sistemi içerir.",
+      "description": "Seo optimizasyonu ve bir cok bileşen birleşimi sonucunda müşterinin istekleri doğrultusunda gelistirilmiş ve her türlü cihaz da çalışan bir yapı da kurulmuştur.",
       "detailImages": [
         "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=1200&h=800&fit=crop",
         "https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?w=1200&h=800&fit=crop",

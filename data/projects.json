@@ -64,6 +64,8 @@
         { "name": "javascript", "color": "#ffca28" }
       ],
       "description": "Seo optimizasyonu ve bir cok bileşen birleşimi sonucunda müşterinin istekleri doğrultusunda gelistirilmiş ve her türlü cihaz da çalışan bir yapı da kurulmuştur.",
+      "Link": "https://github.com/hakankarabalta/gym-website",
+      "Demo": "https://gym-website-seven-silk.vercel.app/",
       "detailImages": [
         "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=1200&h=800&fit=crop",
         "https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?w=1200&h=800&fit=crop",

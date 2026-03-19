@@ -57,7 +57,7 @@
     {
       "id": 4,
       "title": "BoostTraningClub website",
-      "thumbnail": "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&h=600&fit=crop",
+      "thumbnail": "../assets/img/boostTrainingClub/thumnail.jpg",
       "tags": [
         { "name": "html5", "color": "#61dafb" },
         { "name": "css3", "color": "#764abc" },
